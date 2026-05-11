@@ -30,7 +30,7 @@ const livrosEncontrados = [
     }
 ];
 
-// elementos do dom
+// pega div do html
 const containerResultados = document.getElementById('resultadosBusca');
 
 // exibe os livro
@@ -70,7 +70,7 @@ function exibirLivros(livros) {
             status.classList.add('indisponivel');
             botao.textContent = "Indisponível";
             botao.disabled = true;
-        }
+        }                                                   
 
         botao.addEventListener('click', () => {
             livro.disponivel = false;
@@ -81,11 +81,8 @@ function exibirLivros(livros) {
             status.textContent = "Indisponível";
             status.classList.remove('disponivel');
             status.classList.add('indisponivel');
-
-            console.log(`Sucesso: O livro "${livro.titulo}" agora está Indisponível.`);
         });
 
-        // Adiciona a imagem antes do título para seguir o padrão visual
         card.appendChild(img);
         card.appendChild(titulo);
         card.appendChild(autor);
